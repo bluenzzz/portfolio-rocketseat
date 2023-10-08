@@ -1,0 +1,209 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  transition: all 0.7s;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+button,
+textarea {
+  font-family: "Inter", sans-serif;
+}
+
+:root {
+  --background-image: url("./assets/bg.png");
+  --text-color: #fff;
+  --background-color: rgba(255, 255, 255, 0.1);
+  --background-color-hover: rgba(255, 255, 255, 0.05);
+  --border-color: rgba(255, 255, 255, 0.5);
+  --border-color-hover: #fff;
+  --circle-color: rgba(255, 255, 255, 0.2);
+  --svg-button: url("./assets/moonstars.svg");
+  --background-image-mobile: url("./assets/bg-mobile.png");
+}
+
+.light {
+  --background-image: url("./assets/bg-light.png");
+  --text-color: #000;
+  --background-color: rgba(0, 0, 0, 0.05);
+  --background-color-hover: rgba(0, 0, 0, 0.02);
+  --border-color: rgba(0, 0, 0, 0.5);
+  --border-color-hover: #000;
+  --circle-color: rgba(0, 0, 0, 0.1);
+  --svg-button: url("./assets/sun.svg");
+  --background-image-mobile: url("./assets/bg-mobile-light.png");
+}
+
+section {
+  width: 100vw;
+  height: 100vh;
+}
+
+section .container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  background: var(--background-image) no-repeat top center/cover;
+}
+
+section .container .wrap {
+  width: 588px;
+  height: 712px;
+  margin-top: 56px;
+}
+
+/* Usúario */
+section .container .wrap #user {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding: 24px;
+  gap: 8px;
+}
+
+section .container .wrap #user img {
+  width: 112px;
+  height: 111px;
+  border-radius: 50%;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+section .container .wrap #user span {
+  color: var(--text-color);
+  font-size: 16px;
+}
+
+/* Switch */
+section .container .wrap #switch {
+  width: 64px;
+  position: relative;
+  margin: 4px auto;
+}
+
+section .container .wrap #switch button {
+  position: absolute;
+  z-index: 1;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 0;
+  transform: translateY(-50%);
+  top: 50%;
+  background: #fff var(--svg-button) no-repeat center;
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
+.light section .container .wrap #switch button {
+  right: 0;
+}
+
+section .container .wrap #switch span {
+  display: block;
+  width: 64px;
+  height: 24px;
+  border-radius: 9999px;
+  background-color: var(--background-color);
+  border: 1px solid var(--border-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+/* Links */
+section .container .wrap #user-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+}
+
+section .container .wrap #user-links li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  text-decoration: none;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  transition: background 0.2s;
+}
+
+section .container .wrap #user-links li a:hover {
+  border: 1.5px solid var(--border-color-hover);
+  background-color: var(--background-color-hover);
+}
+
+/* Social Media */
+section .container .wrap #social-media {
+  padding: 24px;
+  display: flex;
+  justify-content: center;
+  font-size: 24px;
+}
+
+section .container .wrap #social-media a {
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  border-radius: 50%;
+  transition: background 0.2s;
+}
+
+section .container .wrap #social-media a:hover {
+  background-color: var(--circle-color);
+}
+
+section .container .wrap #social-media a {
+  text-decoration: none;
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+}
+
+section .container .wrap footer {
+  padding: 24px;
+  width: 100%;
+  height: 88px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--text-color);
+}
+
+section .container .wrap footer a {
+  color: var(--text-color);
+}
+
+/* Responsividade para celular */
+
+@media (max-width: 420px) {
+  section .container {
+    overflow: scroll;
+    background: var(--background-image-mobile) no-repeat top center/cover;
+  }
+
+  section .container .wrap {
+    width: 360px;
+    height: 800px;
+  }
+}
