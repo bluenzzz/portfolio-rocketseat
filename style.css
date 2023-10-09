@@ -92,7 +92,8 @@ section .container .wrap #switch {
 
 section .container .wrap #switch button {
   position: absolute;
-  animation: slide-out 0.4s forwards;
+  left: 0;
+  animation: slide-out 0.4s;
   z-index: 1;
   width: 32px;
   height: 32px;
